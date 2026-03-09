@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgn0xtk7rw07d"]
+[gd_scene load_steps=14 format=3 uid="uid://dgn0xtk7rw07d"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_0xm2m"]
-[ext_resource type="Material" uid="uid://djewx4xcyw0r5" path="res://addons/godot-xr-tools/materials/pointer.tres" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -28,9 +27,16 @@ size = Vector2(20, 20)
 size = Vector3(20, 1, 20)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_h2yge"]
-material = ExtResource("3_1bvp3")
-top_radius = 2.0
-height = 1.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
+custom_aabb = AABB(0, 0, 0, 0, 2, 0)
+size = Vector3(5, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1bvp3"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
+size = Vector3(3, 1, 1)
 
 [node name="Main" type="Node3D"]
 
@@ -62,7 +68,7 @@ pose = &"grip"
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+[node name="Suelo" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(1, 0, 0, 0, 0.0041538845, 0.9999915, 0, -0.9999915, 0.0041538845, 0.00020849705, -0.0020160675, 0.00033819675)
 mesh = SubResource("QuadMesh_0xm2m")
 
@@ -70,8 +76,24 @@ mesh = SubResource("QuadMesh_0xm2m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5434835, 0)
 shape = SubResource("BoxShape3D_0xm2m")
 
+[node name="EsquinaIzq" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5311556, 0, -1.4827925)
+mesh = SubResource("CylinderMesh_h2yge")
+
 [node name="Mesa" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.06278175, 0.39766634, -1.5052128)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017030612, 0.4913255, -1.4944575)
+mesh = SubResource("BoxMesh_h2yge")
+
+[node name="MesaIzq" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.55301344, 0, -0.8331723, 0, 1, 0, 0.8331723, 0, -0.55301344, -3.351273, 0.5069618, -0.23444992)
+mesh = SubResource("BoxMesh_1bvp3")
+
+[node name="MesaDer" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.55339164, 0, 0.8329212, 0, 1, 0, -0.8329212, 0, -0.55339164, 3.3210437, 0.5233754, -0.32328802)
+mesh = SubResource("BoxMesh_lquwl")
+
+[node name="EsquinaIzq2" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5532742, 0, -1.4974874)
 mesh = SubResource("CylinderMesh_h2yge")
 
 [node name="StartXR" parent="." instance=ExtResource("3_h2yge")]
