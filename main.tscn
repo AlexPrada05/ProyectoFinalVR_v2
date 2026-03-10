@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgn0xtk7rw07d"]
+[gd_scene load_steps=22 format=3 uid="uid://dgn0xtk7rw07d"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_0xm2m"]
@@ -36,15 +36,31 @@ size = Vector2(20, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(20, 1, 20)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
+albedo_color = Color(0.49411765, 0, 0.03137255, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_h2yge"]
+material = SubResource("StandardMaterial3D_lquwl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+albedo_color = Color(0.49411765, 0, 0.03137255, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
+material = SubResource("StandardMaterial3D_7mycd")
 size = Vector3(3, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+albedo_color = Color(0.49411765, 0, 0.03137255, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7mycd"]
+material = SubResource("StandardMaterial3D_272bh")
 size = Vector3(3, 1, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
+albedo_color = Color(0.49411765, 0, 0.03137255, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_272bh"]
+material = SubResource("StandardMaterial3D_5vw27")
 size = Vector3(3, 1, 1)
 
 [node name="Main" type="Node3D"]
@@ -106,11 +122,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07067764, 0.5039549, -1.772
 mesh = SubResource("BoxMesh_lquwl")
 
 [node name="MesaIzq" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.55339164, 0, -0.8329212, 0, 1, 0, 0.8329212, 0, -0.55339164, -2.2482555, 0.5088072, -0.5581879)
+transform = Transform3D(-0.55339164, 0, -0.8329212, 0, 1, 0, 0.8329212, 0, -0.55339164, -2.2482555, 0.50118077, -0.5581879)
 mesh = SubResource("BoxMesh_7mycd")
 
 [node name="MesaDer" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.55339164, 0, 0.8329212, 0, 1, 0, -0.8329212, 0, -0.55339164, 2.3645458, 0.51318514, -0.5581876)
+transform = Transform3D(-0.55339164, 0, 0.8329212, 0, 1, 0, -0.8329212, 0, -0.55339164, 2.3645458, 0.5053625, -0.5581876)
 mesh = SubResource("BoxMesh_272bh")
 
 [node name="StartXR" parent="." instance=ExtResource("3_h2yge")]
