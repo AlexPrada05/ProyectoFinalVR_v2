@@ -106,11 +106,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07067764, 0.5039549, -1.772
 mesh = SubResource("BoxMesh_lquwl")
 
 [node name="MesaIzq" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.55339164, 0, -0.8329212, 0, 1, 0, 0.8329212, 0, -0.55339164, -2.2482555, 0, -0.5581879)
+transform = Transform3D(-0.55339164, 0, -0.8329212, 0, 1, 0, 0.8329212, 0, -0.55339164, -2.2482555, 0.5088072, -0.5581879)
 mesh = SubResource("BoxMesh_7mycd")
 
 [node name="MesaDer" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.55339164, 0, 0.8329212, 0, 1, 0, -0.8329212, 0, -0.55339164, 2.3645458, 0, -0.5581876)
+transform = Transform3D(-0.55339164, 0, 0.8329212, 0, 1, 0, -0.8329212, 0, -0.55339164, 2.3645458, 0.51318514, -0.5581876)
 mesh = SubResource("BoxMesh_272bh")
 
 [node name="StartXR" parent="." instance=ExtResource("3_h2yge")]
